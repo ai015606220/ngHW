@@ -1,6 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { newToDoItem } from './newItem';
 import { DataServiceService } from '../data-service.service';
+
+import { newToDoItem } from './newItem';
+
+import { response_userList } from '../interfaceList';
+
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-new-to-do-form',
@@ -21,7 +26,7 @@ export class NewToDoFormComponent implements OnInit {
     'Special'
   ];
 
-  userList: any[] = this.dataService.getUserList();
+  userList: any;
 
   newItem: any = new newToDoItem(
     '',
@@ -31,6 +36,18 @@ export class NewToDoFormComponent implements OnInit {
   );
 
   ngOnInit() {
+    this.dataService.getUserList()
+    .subscribe(
+      value => {
+        this.userList = value;
+      },
+      err => {
+        console.log(err);
+      },
+      () => {
+        console.log('complete');
+      }
+    );
   }
 
   addItem() {

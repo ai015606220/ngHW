@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
 
   itemDetail;
-  toDoList = [];
+  toDoList: any[] = [];
 
   constructor () {}
 

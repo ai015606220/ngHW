@@ -3,7 +3,7 @@
     <h4>Detail:</h4>
     <p>Title: {{ itemDetail.title }}</p>
     <p>Type: {{ itemDetail.type }}</p>
-    <p>User: {{ userDetail.name }}</p>
     <p>Message: {{ itemDetail.text }}</p>
+    <p>User: {{ userDetail | json }}</p>
   </div>
 </div>

@@ -4,6 +4,6 @@ export class newToDoItem {
     private type: string,
     private fz: number,
     private text: string,
-    private user?: any
+    private userId?: number
   ) {}
 }

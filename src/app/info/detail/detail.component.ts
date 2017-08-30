@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { DataServiceService } from '../../data-service.service';
 
 @Component({
   selector: 'app-detail',
@@ -11,11 +12,21 @@ export class DetailComponent implements OnInit, OnChanges {
 
   userDetail: any;
 
-  constructor() { }
+  constructor(
+    private dataService: DataServiceService
+  ) { }
 
   ngOnChanges() {
     if (this.itemDetail) {
-      this.userDetail = JSON.parse(this.itemDetail.user);
+      this.dataService.getUserInfo(this.itemDetail.userId)
+        .subscribe(
+          value => {
+            this.userDetail = value;
+          },
+          err => {
+            console.log(err);
+          }
+        );
     }
   }
   ngOnInit() { }

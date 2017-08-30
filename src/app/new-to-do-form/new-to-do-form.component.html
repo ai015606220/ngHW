@@ -14,10 +14,10 @@
     <p>Font Size:</p>
     <input id="fz" name="fz" class="input-item" type="number" [(ngModel)]="newItem.fz">
     <p>User:</p>
-    <select id="user" name="user" [(ngModel)]="newItem.user" required>
+    <select id="user" name="user" [(ngModel)]="newItem.userId" required>
       <option
         *ngFor="let user of userList; let i = index"
-        [value]="toJsonString(user)">
+        [value]="user.id">
         {{ user.username }}
       </option>
     </select>
