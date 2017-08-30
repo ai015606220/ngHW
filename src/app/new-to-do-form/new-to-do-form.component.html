@@ -1,0 +1,28 @@
+<div class="inputZone">
+  <form #newToDoItemForm="ngForm">
+    <p>Title:</p>
+    <input id="title" name="title" class="input-item" type="text" pattern="[A-z\s]*"
+      [(ngModel)]="newItem.title"
+      #title #titleModel="ngModel"
+      required>
+    <p>{{ title.className }}</p>
+    <p>{{ titleModel.invalid }}</p>
+    <p>Type:</p>
+    <select id="type" name="type" class="input-item" [(ngModel)]="newItem.type">
+      <option *ngFor="let type of typeList" [value]="type">{{type}}</option>
+    </select>
+    <p>Font Size:</p>
+    <input id="fz" name="fz" class="input-item" type="number" [(ngModel)]="newItem.fz">
+    <p>User:</p>
+    <select id="user" name="user" [(ngModel)]="newItem.user" required>
+      <option
+        *ngFor="let user of userList; let i = index"
+        [value]="toJsonString(user)">
+        {{ user.username }}
+      </option>
+    </select>
+    <p>Message:</p>
+    <textarea id="text" name="text" class="input-item" [(ngModel)]="newItem.text" cols="30" rows="10"></textarea>
+    <button class="input-item" (click)="addItem()" [disabled]="newToDoItemForm.form.invalid">新增</button>
+  </form>
+</div>
