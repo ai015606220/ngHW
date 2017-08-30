@@ -9,9 +9,13 @@ import { InfoComponent } from './info/info.component';
 import { CountComponent } from './info/count/count.component';
 import { DetailComponent } from './info/detail/detail.component';
 import { NewToDoFormComponent } from './new-to-do-form/new-to-do-form.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { DataServiceService } from './data-service.service';
 import { CapitalizePipe } from './capitalize.pipe';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
+import { Page11Component } from './page1/page1-1/page1-1.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,16 @@ import { CapitalizePipe } from './capitalize.pipe';
     CountComponent,
     DetailComponent,
     NewToDoFormComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    Page1Component,
+    Page2Component,
+    Page11Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     DataServiceService

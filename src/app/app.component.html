@@ -1,4 +1,14 @@
 <div class="container">
+  <div>
+    <ul>
+      <li><a [routerLink]="['/page1']">page1</a></li>
+      <li><a [routerLink]="['/page2']">page2</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+  <div>
+    <button (click)="turnToPage('page2')">page2</button>
+  </div>
   <div class="listZone">
     <div class="toDoList">
       <app-list-item class="toDo-item"

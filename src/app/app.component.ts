@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ export class AppComponent {
   itemDetail;
   toDoList: any[] = [];
 
-  constructor () {}
+  constructor (
+    private router: Router
+  ) {}
 
   showItemDetail(item) {
     this.itemDetail = item;
@@ -19,5 +22,9 @@ export class AppComponent {
 
   addToDoItem(item) {
     this.toDoList.push(item);
+  }
+
+  turnToPage(page) {
+    this.router.navigateByUrl(`/${page}`);
   }
 }
