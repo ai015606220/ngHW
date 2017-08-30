@@ -11,6 +11,7 @@ import { DetailComponent } from './info/detail/detail.component';
 import { NewToDoFormComponent } from './new-to-do-form/new-to-do-form.component';
 
 import { DataServiceService } from './data-service.service';
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DataServiceService } from './data-service.service';
     InfoComponent,
     CountComponent,
     DetailComponent,
-    NewToDoFormComponent
+    NewToDoFormComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@
   <div class="icon" *ngIf="toDoItem.type === 'Special'">
       <img src="../assets/question.png" alt="">
   </div>
-  <div [ngStyle]="{'font-size': toDoItem.fz + 'px'}">Title: {{toDoItem.title}}</div>
+  <div [ngStyle]="{'font-size': toDoItem.fz + 'px'}">Title: {{ toDoItem.title | capitalize }}</div>
   <div>Type: {{toDoItem.type}}</div>
   <div>Message: {{toDoItem.text}}</div>
 </div>
