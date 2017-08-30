@@ -9,6 +9,8 @@ import { CountComponent } from './info/count/count.component';
 import { DetailComponent } from './info/detail/detail.component';
 import { NewToDoFormComponent } from './new-to-do-form/new-to-do-form.component';
 
+import { DataServiceService } from './data-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { NewToDoFormComponent } from './new-to-do-form/new-to-do-form.component'
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DataServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
