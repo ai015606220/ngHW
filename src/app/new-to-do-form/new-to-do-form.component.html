@@ -1,5 +1,5 @@
 <div class="inputZone">
-  <form #newToDoItemForm="ngForm">
+  <form #newToDoItemForm="ngForm" (ngSubmit)="addItem()">
     <p>Title:</p>
     <input id="title" name="title" class="input-item" type="text" pattern="[A-z\s]*"
       [(ngModel)]="newItem.title"
@@ -23,6 +23,6 @@
     </select>
     <p>Message:</p>
     <textarea id="text" name="text" class="input-item" [(ngModel)]="newItem.text" cols="30" rows="10"></textarea>
-    <button class="input-item" (click)="addItem()" [disabled]="newToDoItemForm.form.invalid">新增</button>
+    <button type="submit" class="input-item" [disabled]="newToDoItemForm.form.invalid">新增</button>
   </form>
 </div>
