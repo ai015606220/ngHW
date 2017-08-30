@@ -1,0 +1,28 @@
+@import "../styles.scss";
+
+.container {
+  padding: 10px;
+}
+.toDoList {
+  height: 600px;
+  padding: 10px 0;
+  overflow: auto;
+  .toDo-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+}
+.infoZone {
+  padding: 10px 0;
+  border-top: 2px solid #a23456;
+}
+.inputZone {
+  padding: 10px 0;
+  border-top: 2px solid #a23456;
+}
+.input-item {
+  display: block;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="listZone">
+    <div class="toDoList">
+      <app-list-item class="toDo-item"
+        *ngFor="let item of toDoList"
+        [toDoItem]="item"
+        (showDetail)="showItemDetail($event)"></app-list-item>
+    </div>
+  </div>
+  <div class="infoZone">
+    <app-info [allData]="toDoList" [itemDetail]="itemDetail"></app-info>
+  </div>
+
+  <div class="inputZone">
+    Title:
+    <input class="input-item" type="text" [(ngModel)]="newItem_title">
+    Type:
+    <select class="input-item" [(ngModel)]="newItem_type">
+      <option *ngFor="let type of typeList" [value]="type">{{type}}</option>
+    </select>
+    Font Size:
+    <input class="input-item" type="number" [(ngModel)]="newItem_fz">
+    Message:
+    <textarea class="input-item" [(ngModel)]="newItem_text" cols="30" rows="10"></textarea>
+    <button class="input-item" (click)="addItem()">新增</button>
+  </div>
+  <div class="compareZone">
+
+  </div>
+</div>

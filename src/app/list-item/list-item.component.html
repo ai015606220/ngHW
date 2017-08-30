@@ -1,0 +1,13 @@
+<div class="toDo-item"
+  [ngClass]="{'type-high': toDoItem.type === 'Urgent', 'type-special': toDoItem.type === 'Special'}"
+  (dblclick)="showThisDetail(toDoItem)">
+  <div class="icon" *ngIf="toDoItem.type === 'Urgent'">
+    <img src="../assets/notification.png" alt="">
+  </div>
+  <div class="icon" *ngIf="toDoItem.type === 'Special'">
+      <img src="../assets/question.png" alt="">
+  </div>
+  <div [ngStyle]="{'font-size': toDoItem.fz + 'px'}">Title: {{toDoItem.title}}</div>
+  <div>Type: {{toDoItem.type}}</div>
+  <div>Message: {{toDoItem.text}}</div>
+</div>
