@@ -1,5 +1,5 @@
 <div class="inputZone">
-  <form #newToDoItemForm="ngForm" (ngSubmit)="addItem()">
+  <form #newToDoItemForm="ngForm" (ngSubmit)="addItem(newToDoItemForm)">
     <p>Title:</p>
     <input id="title" name="title" class="input-item" type="text" pattern="[A-z\s]*"
       [(ngModel)]="newItem.title"
